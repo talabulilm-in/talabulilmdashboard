@@ -29,6 +29,7 @@
     border-radius: 8px;
     border: 1px solid #918e8e;
     text-indent: 14px;
+    display: none;
 }
 
 .date, .urdu-date {

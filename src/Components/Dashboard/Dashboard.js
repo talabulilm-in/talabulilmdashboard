@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import './Dashboard.css';
 import { BsMoonStars } from "react-icons/bs";
+import logo from "../Images/Logo.png";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const Dashboard = () => {
-const current = new Date();
-const datemonth = `${current.getDate()}-0${current.getMonth()-21}`;
-const date = `${current.getDate()}-0${current.getMonth()+1}-${current.getFullYear()}`;
 
+const Dashboard = () => {
+
+const current = new Date();
+const datemonth = `${current.getDate()}-0${current.getMonth()+1}`;
+// console.log(datemonth);
+const date = `${current.getDate()}-${current.getMonth()+1}-${current.getFullYear()}`;
 const onlydate = `${current.getDate()}`;
-console.log(onlydate);
-const urduDate = Number(onlydate)-21;
+const urduDate = Number(onlydate)+9;
 const locale = 'en';
 const [today, setDate] = useState(new Date()); // Save the current date to be able to trigger an update
 const currenttime = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric' });
@@ -24,6 +26,10 @@ setTimes(response.data)
 console.log(error)
 }
 };
+const[username, setUsername] = useState('');
+const[name, setName] = useState('');
+const[code, setCode] = useState('');
+
 useEffect(() => {
 getTime();
 },[])
@@ -35,6 +41,37 @@ setDt(new Date().toLocaleString())
 return () => clearInterval(secTimer);
 }, []);
 const timeWithSecond = updatedDt.substring(10);
+
+const handleSubmit = () =>{
+   if(username.length === 0){
+      alert('Enter Username');
+   }
+   else if(name.length === 0){
+      alert('Enter Name');
+   }
+   else if(code.length === 0){
+      alert('Enter Code');
+   }
+   else if(code !== 'AALAHAZRAT' ){
+      alert('Code is wrong');
+   }
+   else {
+      const url = "https://localhost/react/registration.php";
+
+      let fData = new FormData();
+      fData.append('username',username);
+      fData.append('name',name);
+      fData.append('code',code);
+
+      axios.post(url,fData)
+      .then(response => alert(response.data))
+      .catch(error => alert(error));
+      }
+      setUsername('');
+      setName('');
+      setCode('');
+}
+
 return (
 <>
 <div className="Dashboard contain">
@@ -65,7 +102,7 @@ return (
       </div>
       <div className="timetableData__item">
          <span className="timetableData__item--first">Khatm-E-Fajr/Tulu-E-Aftab </span>
-         <span className="timetable-dots">:</span>
+         <span className="timetable-dots">:</span> 
          <span> {items.kfta}</span>
       </div>
       <div className="timetableData__item">
@@ -94,7 +131,7 @@ return (
    )
    })}
    <div className="dash-btn-container">
-      <Link to='../apriltimetable'>
+      <Link to='../maytimetable'>
       <button className="btn-btn-primary">View Monthly</button>
       </Link>
    </div>
@@ -245,8 +282,16 @@ return (
       </div>
       <div className="subGrid-section__second">
          <div className="waqiaat">
-            <h3 className="contentSection_subtitle ml-20">Sabaq Aamoz waqiaat</h3>
-            <div className="waqiaat--section">
+            <h3 className="contentSection_subtitle ml-20">Registration Form</h3>
+            <div className="registration-form">
+               <div className="registration-form__item">
+                  <input type="text" name="username" placeholder="Enter Your UserName" value={username} onChange={(e) => setUsername(e.target.value)} />
+                  <input type="text" name="name" placeholder="Enter Your Name" value={name} onChange={(e) => setName(e.target.value)} />
+                  <input type="text" name="code" placeholder="Enter Code"  value={code} onChange={(e) => setCode(e.target.value)} />
+                  <input type="button" name="send" id="send" value={'Submit'} onClick={() => {handleSubmit()}}  />
+               </div>
+            </div>
+            {/* <div className="waqiaat--section">
                <marquee direction="up" >
                   <ul>
                      <a href="google.com">
@@ -272,7 +317,7 @@ return (
                      </a>
                   </ul>
                </marquee>
-            </div>
+            </div> */}
          </div>
       </div>
    </div>
