@@ -1,0 +1,83 @@
+table{
+    text-align: center;
+  }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+td, th {
+    padding: 10px;
+  }
+.customBtn {
+    padding: 3px 15px;
+    background: #6b6bd7;
+    border-color: #6b6bd7;
+    color: #fff;
+  }
+
+  .selectmonthsection h2 {
+    margin-bottom: 20px;
+}
+.monthsection {
+    display: flex;
+    flex-wrap: wrap;
+}
+.monthsection > div {
+  flex: 0 0 calc(100% / 4 - 15px);
+}
+.monthsection__item {
+  background: #fff;
+  height: 150px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  transition: 0.3s all;
+}
+.monthsection__item:hover {
+    box-shadow: rgb(0 0 0 / 30%) 0px 5px 15px;
+    cursor: pointer;
+}
+.monthsection__item span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+/*React Data Table*/
+.hbotQl {
+  white-space: unset !important;
+  text-overflow: unset !important;
+  text-align: center !important;
+}
+
+.fsBPnz {
+  justify-content: center !important;
+}
+.bQdYbR {
+  justify-content: center !important;
+}
+
+.sc-dkrFOg {
+  background: #e9e9e9;
+}
+@media screen and (max-width:992px){
+    .monthsection > div {
+      flex-basis: calc(100% / 3 - 15px);
+  }
+}
+@media screen and (max-width:500px){
+.monthsection {
+  justify-content: space-between;
+}
+.monthsection > div {
+  flex-basis: calc(100% / 2 - 10px);
+}
+.monthsection__item {
+  margin-right: 0;
+  height: 115px;
+}
+}

@@ -1,0 +1,44 @@
+.calendar-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar-section  a {
+    position: relative;
+    padding-bottom: 20px;
+    flex: 0 0 calc(100% / 4 - 20px);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.download-text {
+    position: absolute;
+    bottom: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    min-width: 108px;
+}
+.calendar-section  img {
+    width: 100%;
+}
+
+
+@media screen and (max-width:600px){
+    .calendar-section {
+        justify-content: space-between;
+    }
+    .calendar-section  a {
+        padding-bottom: 10px;
+        flex: 0 0 calc(100% / 2 - 10px);
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    span.download-text {
+        bottom: 30px;
+        padding: 8px;
+    }
+}

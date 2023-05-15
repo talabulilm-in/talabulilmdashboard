@@ -1,0 +1,183 @@
+.timetableData__item {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 430px;
+}
+.timetableData__item--first {
+    display: inline-block;
+    min-width: 280px;
+}
+.Dashboard{
+    position: relative;
+    background-image: url(../Images/quran.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.timetableData {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 44px;
+    width: 100%;
+    max-width: 460px;
+    background-color: #0c1529;
+    box-shadow: rgb(100 100 111 / 70%) 0px 7px 29px 0px;
+    border-radius: 10px;
+    margin-top: 40px;
+    color: #fff;
+}
+.timetableData__item:last-child {
+    padding-bottom: unset;
+}
+.Dashboard.contain h1, .Dashboard.contain > p, .dashboard-header-section__tt {
+    color: #fff;
+}
+.Dashboard.contain h1 {
+    margin-bottom: 8px;
+}
+.dashboard-header-section__tt{
+        margin-top: 60px;
+}
+.dash-btn-container {
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.timetableData + .dash-btn-container {
+    padding-bottom: unset;
+    border-bottom: unset;
+    max-width: 540px;
+}
+.contentSection:first-child {
+    margin-top: 15px;
+}
+
+.contentSection {
+    margin-top: 30px;
+}
+.header-section__timetable {
+    display: flex;
+    color:#fff;
+}
+.contentSection_title--content {
+    margin-top: 12px;
+    line-height: 24px !important;
+}
+.contentSection_subheading {
+    margin-top: 16px;
+    line-height: 24px;
+}
+.contenetList {
+    margin-top: 14px;
+}
+.contentSection_subtitle {
+    margin-top: 24px;
+}
+.contenetList li {
+    line-height: 30px;
+}
+.waqiaat {
+    width: 100%;
+    height: 570px;
+    position: sticky;
+    top: 130px;
+    border: 1px solid #c7c6c6;
+    border-radius: 30px;
+}
+.subGrid-section {
+    display: flex;
+    padding-bottom: 20px;    
+}
+.subGrid-section__first {
+    flex: 0 0 60%;
+    padding-right: 40px;
+}
+.subGrid-section__second {
+    flex: 0 0 calc(40% - 30px);
+}
+.waqiaat--section{
+    margin-top: 20px;
+    padding: 0 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+    max-height: 480px;
+    overflow-y: scroll;
+}
+.waqiaat--section ul li {
+    padding: 15px 0;
+    line-height: 24px;
+}
+img.mob-logo {
+    max-width: 120px;
+}
+
+@media screen and (max-width:767px){
+.subGrid-section {
+    flex-direction: column;
+}
+.subGrid-section__first{
+    padding-right: unset;
+}
+.subGrid-section__second {
+    margin-top: 20px;
+}
+}
+@media screen and (max-width:600px){
+   
+    .timetableData {
+        max-width: 290px;
+        margin-top: 40px;
+        padding: 20px 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timetableData__item {
+        min-width: unset;
+    }
+    .Dashboard {
+        max-height: 490px;
+    }
+    .urdu-date {
+        padding-left: unset;
+        margin-top: 14px;
+    }
+    .header-section__timetable {
+        flex-direction: column;
+    }
+    .Dashboard.contain h1 {
+        font-size: 26px;
+    }
+    .dashboard-header-section__tt {
+        margin-top: 34px;
+    }
+    .timetableData {
+        margin-top: 32px;
+        font-size: 13px;
+    }
+    .timetableData__item--first {
+        min-width: unset;
+    }
+    .Dashboard {
+        background-size: cover;
+    }
+    img.mob-logo {
+        max-width: 120px;
+    }
+ 
+.Sidebar-Navigation > ul {
+    padding: 6px 20px 0;
+}
+.Dashboard.contain {
+    min-height: unset;
+}  
+
+}
+
+@media screen and (max-width:340px){
+.timetableData {
+    max-width: 262px;
+}
+}
